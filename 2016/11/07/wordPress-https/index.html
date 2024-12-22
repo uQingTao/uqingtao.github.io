@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="为 WordPress 全站开启 Https"/>
+
+
+
+
+
+
+
+
+    <link rel="alternate" href="/default" title="uQingTao'Blog" >
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.1"/>
+
+
+
+<link rel="canonical" href="https://pskoty.com/2016/11/07/wordPress-https/"/>
+
+
+<meta name="description" content="关于 WordPress 博客网站，也是刚接触不久，对于 Https 了解也是甚少。真正的了解也就是当时 Chrome 浏览器更新，我发现访问部分网站在域名前会有符号，后来了在网上搜了一下大致了解了 Https 相对于 Http 的优点，以及谷歌等都在推广 Https 。 后来在实现 Facebook 登录本站的时候，需要在开发平台注册，而注册的其中一项要求网站必须采用 Https 协议，所以就尝">
+<meta property="og:type" content="article">
+<meta property="og:title" content="为 WordPress 全站开启 Https">
+<meta property="og:url" content="https://pskoty.com/2016/11/07/wordPress-https/index.html">
+<meta property="og:site_name" content="uQingTao&#39;Blog">
+<meta property="og:description" content="关于 WordPress 博客网站，也是刚接触不久，对于 Https 了解也是甚少。真正的了解也就是当时 Chrome 浏览器更新，我发现访问部分网站在域名前会有符号，后来了在网上搜了一下大致了解了 Https 相对于 Http 的优点，以及谷歌等都在推广 Https 。 后来在实现 Facebook 登录本站的时候，需要在开发平台注册，而注册的其中一项要求网站必须采用 Https 协议，所以就尝">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://pskoty.oss-cn-beijing.aliyuncs.com/post/wordPress-https/1.png">
+<meta property="og:image" content="https://pskoty.oss-cn-beijing.aliyuncs.com/post/wordPress-https/2.png">
+<meta property="article:published_time" content="2016-11-07T15:17:38.000Z">
+<meta property="article:modified_time" content="2019-09-09T16:22:04.000Z">
+<meta property="article:author" content="uQingTao">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pskoty.oss-cn-beijing.aliyuncs.com/post/wordPress-https/1.png">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1"/>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+    
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?ef3d4cb0b64c69ddba44dfcb86c2c6d4";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1J53LZ1GGM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1J53LZ1GGM');
+  </script>
+
+
+
+
+
+    
+
+
+
+    <link rel="stylesheet" type="text/css" href="/css/search.css?v=1.1"/>
+
+
+
+    <title> 为 WordPress 全站开启 Https - uQingTao'Blog </title>
+  <meta name="generator" content="Hexo 7.3.0"></head>
+
+  <body>
+    <div id="main-container">
+      <header id="mnh-header"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">uQingTao'Blog</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="/">
+                            
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="/archives">
+                            
+                            
+                                Archive
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="/about">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+                
+                    <li class="menu-item">
+                        <a id="search" href="">Search</a>
+                    </li>
+                
+            </ul>
+        
+    </nav>
+
+</div>
+
+      </header>
+      <div id="mnh-content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          为 WordPress 全站开启 Https
+        
+      </h1>
+
+      <time class="post-time">
+          Nov 07 2016
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <p>关于 WordPress 博客网站，也是刚接触不久，对于 Https 了解也是甚少。真正的了解也就是当时 Chrome 浏览器更新，我发现访问部分网站在域名前会有<img src="https://pskoty.oss-cn-beijing.aliyuncs.com/post/wordPress-https/1.png">符号，后来了在网上搜了一下大致了解了 Https 相对于 Http 的优点，以及<a target="_blank" rel="noopener" href="http://www.ifanr.com/715503">谷歌等都在推广 Https </a>。</p>
+<p>后来在实现 Facebook 登录本站的时候，需要在开发平台注册，而注册的其中一项要求网站必须采用 Https 协议，所以就尝试实现。</p>
+<span id="more"></span>
+
+<h4 id="申请证书"><a href="#申请证书" class="headerlink" title="申请证书"></a>申请证书</h4><p>Https 首先需要向国际公认的证书证书认证机构（简称CA，Certificate Authority）申请 SSL 证书，申请证书的途径有很多，按照网站需求选择。</p>
+<p>我选择的是<a target="_blank" rel="noopener" href="https://console.qcloud.com/ssl">腾讯云</a>提供的免费 DV 证书，有效期为一年。</p>
+<p>申请成功之后可以下载证书。解压获得3个文件夹，分别是Apache、IIS、Nginx 服务器的证书文件，按照服务器选择安装。</p>
+<h4 id="安装证书"><a href="#安装证书" class="headerlink" title="安装证书"></a>安装证书</h4><p>按照腾讯云<a target="_blank" rel="noopener" href="https://www.qcloud.com/doc/product/400/%E8%AF%81%E4%B9%A6%E5%AE%89%E8%A3%85%E6%8C%87%E5%BC%95">证书安装指引</a>进行安装.本站运行在阿里云的服务器搭建的 LNMP(OneinStack) 环境，所以选择 Nginx 服务器的证书文件，上传到服务器 <code>/usr/local/nginx/conf/vhost</code>文件夹。修改 Nginx 配置文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">listen 80;</span><br><span class="line">listen 443 ssl http2;</span><br><span class="line">ssl_certificate /usr/local/nginx/conf/ssl.crt;</span><br><span class="line">ssl_certificate_key /usr/local/nginx/conf/ssl.key;</span><br><span class="line">ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">ssl_ciphers EECDH+CHACHA20:EECDH+AES128:RSA+AES128:EECDH+AES256:RSA+AES256:EECDH+3DES:RSA+3DES:!MD5;</span><br><span class="line">ssl_prefer_server_ciphers on;</span><br><span class="line">ssl_session_timeout 10m;</span><br><span class="line">ssl_session_cache builtin:1000 shared:SSL:10m;</span><br><span class="line">ssl_buffer_size 1400;</span><br><span class="line">add_header Strict-Transport-Security max-age=15768000;</span><br><span class="line">ssl_stapling on;</span><br><span class="line">ssl_stapling_verify on;</span><br><span class="line">server_name www.pskoty.com pskoty.com;</span><br><span class="line">access_log /data/wwwlogs/www.pskoty.com_nginx.log combined;</span><br><span class="line">index index.html index.htm index.php;</span><br><span class="line">include /usr/local/nginx/conf/rewrite/wordpress.conf;</span><br><span class="line">root /data/wwwroot/pskoty;</span><br><span class="line">if ($ssl_protocol = &quot;&quot;) &#123; return 301 https://$host$request_uri; &#125;</span><br><span class="line"></span><br><span class="line">location ~ [^/]\.php(/|$) &#123;</span><br><span class="line">    #fastcgi_pass remote_php_ip:9000;</span><br><span class="line">    fastcgi_pass unix:/dev/shm/php-cgi.sock;</span><br><span class="line">    fastcgi_index index.php;</span><br><span class="line">    include fastcgi.conf;</span><br><span class="line">    &#125;</span><br><span class="line">location ~ .*\.(gif|jpg|jpeg|png|bmp|swf|flv|ico)$ &#123;</span><br><span class="line">    expires 30d;</span><br><span class="line">    access_log off;</span><br><span class="line">    &#125;</span><br><span class="line">location ~ .*\.(js|css)?$ &#123;</span><br><span class="line">    expires 7d;</span><br><span class="line">    access_log off;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其他文件不做修改，重启 Nginx 。</p>
+<h4 id="修改资源链接"><a href="#修改资源链接" class="headerlink" title="修改资源链接"></a>修改资源链接</h4><p>在启用 Https 链接后，地址栏依然没有出现<code>https</code>。原来是网站引用了一些 <code>HTTP resources</code> ，找到所有原 Http 引用的静态资源及图片，改为 Https 。</p>
+<p><img src="https://pskoty.oss-cn-beijing.aliyuncs.com/post/wordPress-https/2.png"></p>
+<p>又忙活了一大阵之后，刷新浏览器。终于出现，大功告成~</p>
+
+            </div>
+          
+
+    
+      <footer class="post-footer">
+		
+
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2016/12/05/no%20title/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">no title</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2016/11/06/visit-industry-fair/">
+        <span class="next-text nav-default">工博会参观日记</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="mnh-footer"><span class="footer-content-container">
+    <span class="footer-item">
+        
+            &copy;
+        
+            2016 -
+        
+        2024
+    </span>
+    
+        
+        <span class="footer-item footer-author">
+            developed with ❤️ by <a class="hexo-link" href="https:pskoty.com">uQingTao</a>.
+        </span>
+    
+    <span class="footer-item powered-by">
+        Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>.
+    </span>
+    
+    
+        <span class="footer-item footer-license">
+            Licensed under <a class="hexo-link" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA 4.0</a>.
+        </span>
+    
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+<div id="search-container" class="search-container-mask">
+    <div class="search-container">
+        <input type="hidden" id="algolia_index" value="Hexo"/>
+        <input type="hidden" id="algolia_app_id" value="38MM0GT1PA"/>
+        <input type="hidden" id="algolia_token" value="0e8ddb5f2581f0c137fcb130f56e30bf"/>
+        <div class="section">
+            <div class="container">
+                <div class="panel">
+                    <div class="panel-heading">
+                        Search
+                        <a id="close" href="" style="float: right; color: #363636;">
+                            <i class="fas fa-times-circle" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="panel-block">
+                        <div id="searchContainer" class="control has-icons-left">
+                            <input id="searchField" class="input" type="text" placeholder="Enter anything...">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-search" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div id="result"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+
+    
+    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script type="text/javascript" src="/js/src/search.js"></script>
+
+
+  </body>
+</html>
