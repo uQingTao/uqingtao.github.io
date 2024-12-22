@@ -78,16 +78,15 @@ var search = function (query) {
 };
 
 $(function () {
-
   $('#close').on('click', function (e) {
     e.preventDefault();
-    $('#search-container').removeClass('search-container-active');
+    $('#search-container').removeClass('active');
     $('#searchField').off('change paste keyup');
   });
 
   $('#search').on('click touchstart', function (e) {
     e.preventDefault();
-    $('#search-container').addClass('search-container-active');
+    $('#search-container').addClass('active');
     $('#searchField').focus();
     var query = '';
     search(query);
@@ -99,6 +98,13 @@ $(function () {
         search(query);
       }
     });
+  });
+
+  // 单击蒙层
+  $('#search-container').on('click', function (e) {
+    if (e.target.id === 'search-container') {
+      $('#search-container').removeClass('active');
+    }
   });
 
 });
